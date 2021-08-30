@@ -1,0 +1,39 @@
+.header_area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95vw;
+  height: 10vh;
+  padding: 5vh;
+  transition: background 0.4s, all 0.3s linear;
+}
+.nav_bar {
+  width: 90%;
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  align-items: center;
+}
+.nav_bar-logo {
+  height: 36px;
+  width: 96px;
+  color: black;
+  background-color: aqua;
+}
+.collapse {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+.menu_nav {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+.nav-item a {
+  align-items: center;
+  font: 500 12px/120px "Roboto", sans-serif;
+  text-decoration: none;
+}
