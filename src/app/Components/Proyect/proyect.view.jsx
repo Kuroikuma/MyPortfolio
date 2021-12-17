@@ -53,10 +53,11 @@ export const ProyectView = (props) => {
               : "ProyectContainer__Info"
           }
         >
+          <h3>AMERICAN CHEESE</h3>
           <p>
-            proyecto american cheese de la pizzeria ubicada nicaragua,chontales
-            que se le contruyo punto de venta,control de inventario, landing
-            page
+            Pagina web de la pizzeria american cheese ubicada
+            nicaragua,chontales que se le contruyo punto de venta,control de
+            inventario, landing page
           </p>
         </div>
       </div>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import GitHub from "../../../Assets/github.png";
 import Facebook from "../../../Assets/facebook.png";
 import LinkedIn from "../../../Assets/linkedin.png";
+import Perfil from "../../../Assets/IMG-20210430-WA0013.jpg";
 export const Home = () => {
   const [height, setHeight] = useState(window.innerHeight);
 
@@ -52,8 +53,18 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <div className="HomeContainer__Image"></div>
-      <div className="HomeContainer__Info"></div>
+      <div className="HomeContainer__Image">
+        <img src={Perfil} alt="Perfil" />
+      </div>
+      <div className="HomeContainer__Info">
+        <p>
+          &nbsp; <span className="titleInfo">Soy programador Junior. </span> <br /> Con amplitud a
+          aprender, autodidacta, responsable en diseñar y desarrollar
+          aplicaciones web. Haber participado en desarrollo de proyectos en
+          equipo con diferentes lenguajes de programacion y diversas tecnologias
+          para el desarrollo de software o aplicaciones.
+        </p>
+      </div>
       <div className="HomeContainer__Info__Contact">
         <div className="HomeContainer__Info__Contact__item HomeContainer__Info__Contact__LinkedIn">
           <img

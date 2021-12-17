@@ -45,9 +45,19 @@
   border-radius: 30px;
   border: 15px solid #ffffff;
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: 20vh;
   top: 20vh;
+}
+.titleInfo {
+  font-family: roboto, lato, sans-serif;
+  font-weight: bold;
+}
+.HomeContainer__Image img {
+  height: 90%;
+  border-radius: 20px;
 }
 .HomeContainer__Info {
   height: 30vh;
@@ -56,9 +66,16 @@
   border-radius: 30px;
   border: 15px solid #ffffff;
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: 100vh;
   top: 30vh;
+}
+.HomeContainer__Info p {
+  height: 60%;
+  width: 80%;
+  font-family: roboto, lato, sans-serif;
 }
 .HomeContainer__Circle {
   background-color: #fad201;

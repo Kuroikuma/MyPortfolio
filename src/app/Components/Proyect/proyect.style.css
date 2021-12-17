@@ -203,7 +203,8 @@
   transition-timing-function: ease;
   transition-duration: 1s;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   background: #ffffff;
   z-index: 20;
@@ -212,6 +213,10 @@
 .ProyectContainer__Info.show {
   opacity: 1;
   transform: none;
+}
+.ProyectContainer__Info h3 {
+  margin: 0px;
+  font-family: roboto, lato, sans-serif;
 }
 .ProyectContainer__Info p {
   height: 30%;

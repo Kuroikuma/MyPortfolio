@@ -62,7 +62,6 @@ div {
 .SkillContainer__Skills__item {
   height: 80%;
   width: 15%;
-
   margin-top: 20px;
   display: flex;
   flex-direction: column;
