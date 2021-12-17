@@ -2,8 +2,7 @@
   height: 100vh;
   width: 98.7vw;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   background: rgb(250, 210, 1);
   background: linear-gradient(
@@ -14,9 +13,17 @@
     rgba(35, 33, 32, 1) 100%
   );
 }
+.proyectContainer2 {
+  height: 100vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .ProyectContainer__Title {
   height: 10%;
-  width: 40%;
+  width: 80%;
   display: flex;
   opacity: 0;
   transform: translate(-200px);
@@ -36,11 +43,16 @@
   color: #ffffff;
   font-family: roboto, lato, sans-serif;
 }
+
 .ProyectContainer__View {
-  height: 60%;
-  width: 55%;
+  height: 62%;
+  width: 90%;
   background: #232120;
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   transform: translate(-200px);
   transition-property: opacity, transform, -webkit-transform;
   transition-timing-function: ease;
@@ -53,15 +65,23 @@
   opacity: 1;
   transform: none;
 }
-
-.ProyectContainer__View__previousProyect {
+.ProyectContainer__previousProyect--Left {
   height: 20vh;
   width: 20vh;
-  position: absolute;
-  left: 15vh;
-  top: 115.4vw;
-  transition: left 0.3s;
-  transition-timing-function: ease-in-out;
+  opacity: 0;
+  transform: translate(-200px);
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+}
+.ProyectContainer__previousProyect {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transform: translate(-200px);
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: ease;
+  transition-duration: 1s;
   background: rgb(250, 210, 1);
   background: linear-gradient(
     180deg,
@@ -73,17 +93,38 @@
   clip-path: polygon(57% 0, 32% 50%, 57% 100%, 25% 100%, 0% 50%, 25% 0%);
   cursor: pointer;
 }
-.ProyectContainer__View__previousProyect:hover {
-  left: 14vh;
+.ProyectContainer__previousProyect.show {
+  opacity: 1;
+  transform: none;
 }
-.ProyectContainer__View__nextProyect {
+.ProyectContainer__previousProyect--Left.show {
+  opacity: 1;
+  transform: none;
+}
+.ProyectContainer__previousProyect.show {
+  opacity: 1;
+  transform: none;
+}
+.ProyectContainer__previousProyect--Left:hover {
+  transform: translate(-1vw);
+}
+.ProyectContainer__nextProyect--Right {
   height: 20vh;
   width: 20vh;
-  position: absolute;
-  left: 82vw;
-  top: 115.4vw;
-  transition: left 0.3s;
-  transition-timing-function: ease-in-out;
+  opacity: 0;
+  transform: translate(-200px);
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+}
+.ProyectContainer__nextProyect {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transform: translate(-200px);
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: ease;
+  transition-duration: 1s;
   background: rgb(250, 210, 1);
   background: linear-gradient(
     180deg,
@@ -95,22 +136,27 @@
   clip-path: polygon(57% 0, 90% 50%, 57% 100%, 25% 100%, 58% 50%, 25% 0%);
   cursor: pointer;
 }
-.ProyectContainer__View__nextProyect:hover {
-  left: 82.5vw;
+.ProyectContainer__nextProyect--Right.show {
+  opacity: 1;
+  transform: none;
+}
+.ProyectContainer__nextProyect.show {
+  opacity: 1;
+  transform: none;
+}
+.ProyectContainer__nextProyect--Right:hover {
+  transform: translate(1vw);
 }
 .ProyectContainer__View__img {
   height: 45vh;
-  display: flex;
-  position: absolute;
-  left: 30vw;
-  top: 108vw;
-  /*overflow: hidden;*/
-  align-items: center;
   width: 38vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .ProyectContainer__View__img img {
-  height: 100%;
-  width: 100%;
+  height: 48vh;
+  width: 48vw;
   position: absolute;
   opacity: 0;
   transition-property: opacity;
@@ -131,11 +177,8 @@
   opacity: 1;
 }
 .ProyectContainer__View__ButtonGroup {
-  height: 1.8%;
-  width: 6%;
-  position: absolute;
-  left: 46vw;
-  top: 130vw;
+  height: 3.3%;
+  width: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -153,13 +196,22 @@
 }
 .ProyectContainer__Info {
   height: 15%;
-  width: 60%;
+  width: 80%;
+  opacity: 0;
+  transform: translate(-200px);
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: ease;
+  transition-duration: 1s;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #ffffff;
   z-index: 20;
   border-radius: 20px;
+}
+.ProyectContainer__Info.show {
+  opacity: 1;
+  transform: none;
 }
 .ProyectContainer__Info p {
   height: 30%;

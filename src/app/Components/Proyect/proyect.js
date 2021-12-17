@@ -1,17 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import Pizza1 from "../../../Assets/imagen.png";
 import { useOnScreen } from "../../hooks/useOnScreen";
 import Menu from "../../../Assets/menu.png";
 import Inventario from "../../../Assets/inventario.png";
 import Control from "../../../Assets/control-de-ordenes.png";
-import { sigImg, sigProyect } from "../../../redux/actions/proyect-action";
+//import { sigProyect } from "../../../redux/actions/proyect-action";
 import { ProyectView } from "./proyect.view";
 
 export const Proyect = () => {
-  const dispatch = useDispatch();
-
-  const numberImg = useSelector((state) => state.proyectReducer.numberImg);
   const numberPro = useSelector((state) => state.proyectReducer.numberPro);
   const [TitleProyectRef, showTitleProyect] = useOnScreen({
     rootMargin: "-50px",
@@ -19,37 +16,11 @@ export const Proyect = () => {
   const [ViewProyectRef, showViewProyect] = useOnScreen({
     rootMargin: "-100px",
   });
-
-  useEffect(() => {
-    const ChangeImgtime = setTimeout(() => {
-      console.log("Que pasho");
-      switch (numberImg) {
-        case "primeroImg":
-          dispatch(sigImg("segundoImg"));
-          break;
-        case "segundoImg":
-          dispatch(sigImg("terceroImg"));
-          break;
-        case "terceroImg":
-          dispatch(sigImg("cuartoImg"));
-          break;
-        case "cuartoImg":
-          dispatch(sigImg("primeroImg"));
-          break;
-        default:
-          break;
-      }
-    }, 5000);
-    return () => clearTimeout(ChangeImgtime);
-  }, [numberImg]);
+  const [InfoProyectRef, showInfoProyect] = useOnScreen({
+    rootMargin: "-50px",
+  });
 
   const data = [];
-
-  const changeImg = (event) => {
-    let { name } = event.target;
-    console.log(name);
-    dispatch(sigImg(name));
-  };
 
   data.push({
     img: Menu,
@@ -70,12 +41,12 @@ export const Proyect = () => {
 
   return (
     <ProyectView
-      changeImg={changeImg}
-      numberImg={numberImg}
       numberPro={numberPro}
       data={data}
       TitleProyectRef={TitleProyectRef}
       showTitleProyect={showTitleProyect}
+      InfoProyectRef={InfoProyectRef}
+      showInfoProyect={showInfoProyect}
       ViewProyectRef={ViewProyectRef}
       showViewProyect={showViewProyect}
     />

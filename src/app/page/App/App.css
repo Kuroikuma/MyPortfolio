@@ -9,11 +9,11 @@
 }
 .go-top-container {
   position: fixed;
+  width: 3rem;
+  height: 3rem;
   bottom: 0rem;
   right: 1rem;
-  width: 4rem;
   transition: 0.2s;
-  height: 4rem;
   z-index: -1;
 }
 .go-top-button {
@@ -41,8 +41,8 @@
 }
 .showApp .go-top-button {
   animation: popop 0.3s ease-in-out;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   z-index: 11;
 }
 .showApp img {
@@ -56,12 +56,12 @@
     height: 0rem;
   }
   50% {
-    width: 5rem;
-    height: 5rem;
-  }
-  100% {
     width: 4rem;
     height: 4rem;
+  }
+  100% {
+    width: 3rem;
+    height: 3rem;
   }
 }
 .App-header {
