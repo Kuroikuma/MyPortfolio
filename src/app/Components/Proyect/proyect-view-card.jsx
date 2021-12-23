@@ -1,0 +1,94 @@
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { sigImg } from "../../../redux/actions/proyect-action";
+import "./proyect.style.css";
+
+export const ProyectViewCard = (props) => {
+  const { showViewProyect, ViewProyectRef, data } = props;
+
+  const numberImg = useSelector((state) => state.proyectReducer.numberImg);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const ChangeImgtime = setTimeout(() => {
+      console.log("Que pasho");
+      switch (numberImg) {
+        case "primeroImg":
+          dispatch(sigImg("segundoImg"));
+          break;
+        case "segundoImg":
+          dispatch(sigImg("terceroImg"));
+          break;
+        case "terceroImg":
+          dispatch(sigImg("cuartoImg"));
+          break;
+        case "cuartoImg":
+          dispatch(sigImg("primeroImg"));
+          break;
+        default:
+          break;
+      }
+    }, 5000);
+    return () => clearTimeout(ChangeImgtime);
+  }, [numberImg]);
+
+  const changeImg = (event) => {
+    let { name } = event.target;
+    console.log(name);
+    dispatch(sigImg(name));
+  };
+
+  return (
+    <div
+      ref={ViewProyectRef}
+      className={
+        showViewProyect
+          ? "ProyectContainer__View show"
+          : "ProyectContainer__View"
+      }
+    >
+      <div className="ProyectContainer__View__img">
+        {data.map((item) => (
+          <img className={`${numberImg} `} src={item.img} alt={item.name} />
+        ))}
+      </div>
+      <div className="ProyectContainer__View__ButtonGroup">
+        <button
+          onClick={changeImg}
+          name="primeroImg"
+          className={
+            numberImg === "primeroImg"
+              ? `ProyectContainer__View__ButtonGroup__item active`
+              : `ProyectContainer__View__ButtonGroup__item`
+          }
+        ></button>
+        <button
+          onClick={changeImg}
+          name="segundoImg"
+          className={
+            numberImg === "segundoImg"
+              ? `ProyectContainer__View__ButtonGroup__item active`
+              : `ProyectContainer__View__ButtonGroup__item`
+          }
+        ></button>
+        <button
+          onClick={changeImg}
+          name="terceroImg"
+          className={
+            numberImg === "terceroImg"
+              ? `ProyectContainer__View__ButtonGroup__item active`
+              : `ProyectContainer__View__ButtonGroup__item`
+          }
+        ></button>
+        <button
+          onClick={changeImg}
+          name="cuartoImg"
+          className={
+            numberImg === "cuartoImg"
+              ? `ProyectContainer__View__ButtonGroup__item active`
+              : `ProyectContainer__View__ButtonGroup__item`
+          }
+        ></button>
+      </div>
+    </div>
+  );
+};
